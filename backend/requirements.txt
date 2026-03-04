@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+langgraph
+pydantic
+pydantic-ai
+python-dotenv
+

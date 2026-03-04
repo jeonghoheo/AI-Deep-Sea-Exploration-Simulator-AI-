@@ -1,0 +1,18 @@
+# 설계 지침 (Architectural Guidelines)
+
+1. 아키텍처: FastAPI(Back) + React(Front) + LangGraph(Agent Logic).
+2. 통신 규격: 모든 API 응답은 snake_case를 사용한 JSON 형식을 따름.
+3. 데이터 검증: PydanticAI를 사용하여 LLM 출력을 검증함.
+4. 상태 관리: 
+   - Backend: LangGraph의 State 객체 사용.
+   - Frontend: Zustand를 사용하여 전역 상태 관리.
+   - 상태 관리: "리액트의 useContext나 Zustand를 사용해서 잠수부의 산소량과 인벤토리를 전역으로 관리해줘."
+5. 코드 스타일: 
+   - 함수는 기능별로 20줄 이내로 쪼갤 것.
+   - 모든 비동기 로직은 async/await를 사용할 것.
+
+   
+
+AI 설계 (LangGraph): "백엔드에서 AI가 단순히 텍스트만 주는 게 아니라, { "type": "fish", "name": "심해 갈치", "danger": 5 } 같은 **구조화된 데이터(JSON)**를 주게 해서 게임 시스템이 이해할 수 있게 해줘."
+
+실시간성: "산소 수치가 0이 되면 게임 오버 화면을 보여주고, 다시 시작할 수 있는 버튼을 만들어줘."
